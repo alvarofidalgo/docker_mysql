@@ -16,10 +16,12 @@ RUN yum install sudo -y && \
     mkdir /opt/mysql/mysql && \
     mkdir /opt/mysql/mysql/data && \
     chown -R mysql:mysql /opt/mysql/mysql && \
+    chown mysql scripts/setup.sh && \
+    chmod u+x scripts/setup.sh  && \
     chmod u+x scripts/initalize_db.sh && \
-    chmod u+x scripts/change_password.expect && \
+    chmod u+x scripts/change_password.expect  && \
     chmod u+x scripts/setup.sh    
 
 USER mysql 
 
-ENTRYPOINT ['/scripts/setup.sh']
+ENTRYPOINT scripts/setup.sh

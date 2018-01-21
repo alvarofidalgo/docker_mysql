@@ -23,3 +23,4 @@ expect scripts/change_password.expect $root_pass $NEW_MYSQL_PASS
 
 echo ${PASS_LINE[$pass-1]}
 
+echo "ESTO TIRA"
