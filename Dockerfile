@@ -22,4 +22,4 @@ RUN yum install sudo -y && \
 
 USER mysql 
 
-ENTRYPOINT ['scripts/setup.sh']
+ENTRYPOINT ['/scripts/setup.sh']
