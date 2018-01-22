@@ -2,8 +2,6 @@
 
 set -e
 
-
-
 if  !(mysqladmin ping) ; then
    sh /scripts/initalize_db.sh
 fi
@@ -19,7 +17,7 @@ IFS=' ' read -ra PASS_LINE <<< $passwords
 pass=${#PASS_LINE[@]}
 root_pass=${PASS_LINE[$pass-1]}
 
-expect scripts/change_password.expect $root_pass $NEW_MYSQL_PASS
+expect scripts/change_password.expect $root_pass $NEW_MYSQL_PASS $DATA_BASE_NAME
 
 echo ${PASS_LINE[$pass-1]}
 

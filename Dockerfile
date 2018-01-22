@@ -9,9 +9,11 @@ RUN yum install sudo -y && \
     yum install wget -y && \
     echo "mysql  ALL=(ALL)        ALL" >> /etc/sudoers && \
     wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm && \
+    yum remove wget -y && \
     rpm -ivh mysql57-community-release-el7-9.noarch.rpm && \
     yum install mysql-server -y && \
     yum install expect -y && \
+    rm mysql57-community-release-el7-9.noarch.rpm && \
     mkdir /opt/mysql && \
     mkdir /opt/mysql/mysql && \
     mkdir /opt/mysql/mysql/data && \
