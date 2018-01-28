@@ -17,7 +17,8 @@ IFS=' ' read -ra PASS_LINE <<< $passwords
 pass=${#PASS_LINE[@]}
 root_pass=${PASS_LINE[$pass-1]}
 
-expect scripts/create_database.expect $root_pass $NEW_MYSQL_PASS $DATA_BASE_NAME
+expect scripts/create_database.expect $root_pass $NEW_MYSQL_PASS $DATA_BASE_NAME $DB_USER_NAME
+
 
 echo ${PASS_LINE[$pass-1]}
 

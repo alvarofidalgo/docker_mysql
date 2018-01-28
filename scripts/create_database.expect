@@ -3,16 +3,20 @@
 set lastPassword [lindex $argv 0];
 set newPassword [lindex $argv 1];
 set databaseName [lindex $argv 2]
+set new_user [lindex $argv 3]
+ 
 
 set timeout -1
 
 spawn mysql -uroot -p${lastPassword}
 expect "mysql>"
-send "SET PASSWORD = PASSWORD(${newPassword});\r"
+send "SET PASSWORD = PASSWORD('${newPassword}');\r"
 
 expect "mysql>"
 send "CREATE DATABASE ${databaseName};\r"
 
+expect "mysql>"
+send "CREATE USER '${new_user}'@'localhost' IDENTIFIED BY 'password';\r"
 
 expect "mysql>"
 send "quit\r" 
