@@ -26,6 +26,5 @@ echo "ers use password es  $DB_USER_PASS"
 expect scripts/create_database.expect $root_pass $NEW_MYSQL_PASS $DATA_BASE_NAME $DB_USER_NAME $DB_USER_PASS
 
 
-echo ${PASS_LINE[$pass-1]}
 
-tail -f /var/log/*
+tail -f /var/log/mysqld.log
