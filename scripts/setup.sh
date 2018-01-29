@@ -22,4 +22,4 @@ expect scripts/create_database.expect $root_pass $NEW_MYSQL_PASS $DATA_BASE_NAME
 
 echo ${PASS_LINE[$pass-1]}
 
-echo "ESTO TIRA"
+tail -f /var/log/*
