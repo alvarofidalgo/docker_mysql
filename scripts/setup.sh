@@ -2,6 +2,12 @@
 
 set -e
 
+
+: ${NEW_MYSQL_PASS:="newMySqlPass"}
+: ${DATA_BASE_NAME:="defaultDatabaseName"}
+: ${DB_USER_NAME:="defaultDbUserName"} 
+: ${DB_USER_PASS:="defaultUserPass"}
+
 if  !(mysqladmin ping) ; then
    sh /scripts/initalize_db.sh
 fi
