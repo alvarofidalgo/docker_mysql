@@ -9,3 +9,7 @@ This Docker image build a Docker container with preload data.
   docker build -t <image_name> <clone_project_folder>
 
 **How to load my Data**
+
+    To load data in database you will need file scripts/db.sql with structure and data of your db
+    
+**What parameters we can parametrize in docker container?**    
