@@ -19,4 +19,7 @@ expect "mysql>"
 send "CREATE USER '${new_user}'@'localhost' IDENTIFIED BY  '${new_user_password}';\r"
 
 expect "mysql>"
+send "GRANT ALL ON ${databaseName}.* TO '${new_user}'@'localhost';\r"
+
+expect "mysql>"
 send "quit\r" 

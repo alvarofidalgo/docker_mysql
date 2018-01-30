@@ -25,6 +25,6 @@ root_pass=${PASS_LINE[$pass-1]}
 
 expect scripts/create_database.expect $root_pass $NEW_MYSQL_PASS $DATA_BASE_NAME $DB_USER_NAME $DB_USER_PASS
 
-mysqldump  -h localhost -u $DB_USER_NAME  --password=$DB_USER_PASS $DATA_BASE_NAME > scripts/db.sql
+mysql  -h localhost -u $DB_USER_NAME  --password=$DB_USER_PASS $DATA_BASE_NAME < scripts/db.sql
 
 tail -f /var/log/mysqld.log

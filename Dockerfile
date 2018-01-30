@@ -19,6 +19,7 @@ RUN adduser mysql && \
     mkdir /opt/mysql/mysql/data && \
     chown -R mysql:mysql /opt/mysql/mysql && \
     chown mysql scripts/setup.sh && \
+    chown mysql scripts/db.sql && \
     chmod u+x scripts/setup.sh  && \
     chmod u+x scripts/initalize_db.sh && \
     chmod u+x scripts/create_database.expect  && \
