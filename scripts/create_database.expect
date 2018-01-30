@@ -5,6 +5,8 @@ set newPassword [lindex $argv 1];
 set databaseName [lindex $argv 2]
 set new_user [lindex $argv 3]
 set new_user_password [lindex $argv 4]
+set host [lindex $argv 5]
+
  
 set timeout -1
 
@@ -20,6 +22,9 @@ send "CREATE USER '${new_user}'@'localhost' IDENTIFIED BY  '${new_user_password}
 
 expect "mysql>"
 send "GRANT ALL ON ${databaseName}.* TO '${new_user}'@'localhost';\r"
+
+expect "mysql>"
+send "GRANT ALL ON ${databaseName}.* TO '${new_user}'@'${host}';\r"
 
 expect "mysql>"
 send "quit\r" 
