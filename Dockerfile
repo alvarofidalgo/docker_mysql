@@ -27,4 +27,7 @@ RUN adduser mysql && \
 
 USER mysql 
 
+
+EXPOSE 3306
+
 ENTRYPOINT scripts/setup.sh
